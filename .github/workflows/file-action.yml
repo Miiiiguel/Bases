@@ -15,6 +15,11 @@ jobs:
         run: |
           # Comando para crear un archivo
           echo "Este es un archivo de prueba" > new_file.txt
+          echo "Primera línea" > new_file.txt
 
           # Comando para borrar un archivo
           # rm new_file.txt
+        
+      - name: Read and Print File Content
+        run: |
+          cat nombre_archivo.txt
