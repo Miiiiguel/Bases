@@ -18,8 +18,8 @@ jobs:
       - name: Insert records into online DB
         env:
           SERVER_NAME: cualquiera123456.000webhostapp.com
-          DATABASE_NAME: prueba
-          USERNAME: prueba123456
+          DATABASE_NAME: id20744734_prueba
+          USERNAME: id20744734_prueba123456
           PASSWORD: Conprueba1*
         run: |
           echo "INSERT INTO nombre_tabla (campo1, campo2, campo3) VALUES" >> insert_data.sql
