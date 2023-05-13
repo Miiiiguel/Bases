@@ -1,0 +1,22 @@
+name: Online DB Insert
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  insert-records:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Insert records into online DB
+        env:
+          SERVER_NAME: cualquiera123456.000webhostapp.com
+          DATABASE_NAME: prueba
+          USERNAME: prueba123456
+          PASSWORD: Conprueba1*
+        run: |
+          mysql -h $SERVER_NAME -u $USERNAME -p$PASSWORD $DATABASE_NAME < insert_data.sql
