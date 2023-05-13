@@ -18,10 +18,3 @@ jobs:
 
           # Comando para borrar un archivo
           rm new_file.txt
-
-      - name: Commit changes
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add .
-          git commit -m "Update files"
