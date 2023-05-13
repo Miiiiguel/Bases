@@ -12,6 +12,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Install MySQL client
+        run: sudo apt-get update && sudo apt-get install mysql-client -y
+
       - name: Insert records into online DB
         env:
           SERVER_NAME: cualquiera123456.000webhostapp.com
@@ -19,4 +22,9 @@ jobs:
           USERNAME: prueba123456
           PASSWORD: Conprueba1*
         run: |
+          echo "INSERT INTO nombre_tabla (campo1, campo2, campo3) VALUES" >> insert_data.sql
+          echo "  ('valor1', 'valor2', 'valor3')," >> insert_data.sql
+          # Agrega aquí más registros según tus necesidades
+          echo "  ('valor4', 'valor5', 'valor6');" >> insert_data.sql
           mysql -h $SERVER_NAME -u $USERNAME -p$PASSWORD $DATABASE_NAME < insert_data.sql
+
