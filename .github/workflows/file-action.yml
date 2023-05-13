@@ -17,4 +17,4 @@ jobs:
           echo "Este es un archivo de prueba" > new_file.txt
 
           # Comando para borrar un archivo
-          rm new_file.txt
+          # rm new_file.txt
